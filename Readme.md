@@ -39,9 +39,18 @@ App will be available at:
 http://localhost:3000/
 ```
 
-You need to run both client and server to use this project.
+You need to run both client and server to use this project. Also you need to give unique account number for each vendor otherwise you will get a error message.
 
 
 ## Screenshots
 
 Below are some screenshots of this application.
+
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/dee59876-5d26-42fb-91de-190df73e0384)
+
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/2a03167b-fcf8-44af-b5ce-2cbc9cfd542e)
+
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/b861e681-51e4-4e79-b6d9-e029071d6aa1)
+
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/2eeedcab-02f4-4e6f-8a27-0d1a9cb3d531)
+
