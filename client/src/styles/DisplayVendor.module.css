@@ -1,0 +1,39 @@
+.mainContainer{
+    margin: auto;
+    margin-top: 50px;
+    background: seashell;
+}
+
+.close{
+    background:seashell;
+}
+.close p
+{
+    font-size: 5vh;
+    cursor: pointer;
+}
+
+.close h2{
+    text-align: center;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 93%;
+    margin-inline: auto;
+}
+
+.pagination button{
+    background-color: #762fc7;
+  border: none;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 4px;
+}
