@@ -5,6 +5,8 @@ import axios from "axios";
 import VendorCard from './VendorCard';
 import UpdateVendor from './UpdateVendor';
 import Alert from 'react-bootstrap/Alert';
+import { BASE_URL } from '../helper/helper';
+import ReactPaginate from 'react-paginate';
 
 function DisplayVendor() {
 
@@ -13,23 +15,24 @@ function DisplayVendor() {
   const [update,setUpdate]=useState(false);
   const [modal,setModal]=useState(false);
   const [page,setPage]=useState(1);
-  // const [updatestatus]
-  const increaseCount=()=>{
-    setPage(page+1);
-  }
 
-  const decreaseCount=()=>{
-    setPage(page-1);
-  }
+  const [totalPages, setTotalPages] = useState(0);
 
+    const handlePageChange = (selectedObject) => {
+      // Get the selected page number from the object
+      let selectedPage = selectedObject.selected + 1;
+      // Update the state
+      setPage(selectedPage);
+    };
 
   useEffect(()=>{
-    axios.get(`https://vendorserver-opsg.onrender.com/api/vendorapp/page/${page}`)
+    axios.get(`${BASE_URL}/api/vendorapp/page/${page}`)
     .then((res)=>{
       console.log(res.data);
-      //let active=res.data.length;
-      console.log("Length:",res.data.length)
-      setInfoVendor(res.data);
+      console.log("Total Pages:",Math.ceil(res.data.page/5))
+      setTotalPages(Math.ceil(res.data.page/5));
+
+      setInfoVendor(res.data.vendor);
     })
     .catch((err)=>{
       console.log(err.message);
@@ -56,7 +59,7 @@ function DisplayVendor() {
 
   const deleteHandler = (e) => {
     if (window.confirm("Are you sure you want to delete this vendor?")) {
-    axios.delete(`https://vendorserver-opsg.onrender.com/api/vendorapp/${e.target.name}`);
+    axios.delete(`${BASE_URL}/api/vendorapp/${e.target.name}`);
     setInfoVendor((data) => {
       return data.filter((banking) => banking._id !== e.target.name);
     });
@@ -102,10 +105,22 @@ function DisplayVendor() {
         </tbody>
       </Table>
 
-      <div className={styles.pagination}>
-      <button onClick={decreaseCount}>Back</button>
-          <button onClick={increaseCount}>Next</button>
+
+{/* Using React Paginate for Pagination */}
+      <div className={styles.pagination1}>
+          
+<ReactPaginate
+        pageCount={totalPages} // Total number of pages
+        pageRangeDisplayed={50} // Number of page numbers to display
+        marginPagesDisplayed={2} // Number of pages to display at the start and end of the pagination
+        onPageChange={handlePageChange} // Function to handle page change event
+        containerClassName={'pagination'} // Class name for the container
+        previousLabel={'Back'} // Label for the previous button
+        nextLabel={'Next'} // Label for the next button
+        activeClassName={'active'} // Class name for the active page number
+      />
       </div>
+      
   </>
       )}
   

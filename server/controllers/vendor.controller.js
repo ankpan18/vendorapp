@@ -88,16 +88,15 @@ exports.getOneVendor = (req, res) => {
 };
 
 exports.getVendorByPage = (req, res) => {
-  let page=parseInt(req.params.page);
-  
-  VendorApp.find().skip((page-1)*5).limit(5)
-    .then((vendor) => {
-      console.log({ vendor });
-      res.json(vendor);
-      // res.json({
-      //   message: "Success! You have successfully fetched vendor list using pagination",
-      //   vendor,
-      // });
+  let page = parseInt(req.params.page);
+  let pageSize = 5; 
+  VendorApp.find()
+    .then((vendors) => {
+      let totalCount = vendors.length;
+      let vendorPage = vendors.slice((page - 1) * pageSize, page * pageSize);
+      console.log({ vendorPage });
+      res.status(200).json({vendor:vendorPage,
+      page:totalCount});
     })
     .catch((err) => {
       res.status(404).json({

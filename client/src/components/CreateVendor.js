@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import styles from '../styles/CreateVendor.module.css';
 import Alert from 'react-bootstrap/Alert';
+import { BASE_URL } from '../helper/helper';
 
 
 const CreateVendor=()=> {
@@ -14,13 +15,11 @@ const CreateVendor=()=> {
   function handleSubmit(e)
   {
     e.preventDefault();
-    axios.post("https://vendorserver-opsg.onrender.com/api/vendorapp",vendorInfo)
+    axios.post(`${BASE_URL}/api/vendorapp`,vendorInfo)
     .then((res)=>{
       setVendorInfo({name:"",accno:"",address:"",city:"",country:""});
       console.log(res.data.message);
       setSuccess(true);
-
-      //navigate('/');
     })
       .catch((err)=>{
         console.log("Unable to save Vendor Information");

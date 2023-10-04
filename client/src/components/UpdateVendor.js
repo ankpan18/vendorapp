@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import axios from "axios";
 import styles from '../styles/CreateVendor.module.css';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../helper/helper';
 
 const UpdateVendor = ({_id,closeHandler,updateHandler}) => {
   const [vendorInfo,setVendorInfo]=useState({name:"",accno:"",address:"",city:"",country:""});
@@ -14,7 +15,7 @@ const UpdateVendor = ({_id,closeHandler,updateHandler}) => {
 
   const submitHandler=(e)=>{
     e.preventDefault();
-    axios.put(`https://vendorserver-opsg.onrender.com/api/vendorapp/${_id}`,vendorInfo)
+    axios.put(`${BASE_URL}/api/vendorapp/${_id}`,vendorInfo)
       .then((res)=>{
         
         setVendorInfo({name:"",accno:"",address:"",city:"",country:""});
@@ -28,7 +29,7 @@ const UpdateVendor = ({_id,closeHandler,updateHandler}) => {
   };
 
   useEffect(()=>{
-    axios.get(`https://vendorserver-opsg.onrender.com/api/vendorapp/${_id}`)
+    axios.get(`${BASE_URL}/api/vendorapp/${_id}`)
       .then((res)=>{
         console.log(res.data);
         setVendorInfo(res.data.vendor);

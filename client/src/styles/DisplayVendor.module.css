@@ -17,23 +17,33 @@
     text-align: center;
 }
 
-.pagination{
+.pagination1{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 93%;
     margin-inline: auto;
 }
 
-.pagination button{
-    background-color: #762fc7;
-  border: none;
-  color: white;
-  padding: 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  border-radius: 4px;
+.pagination1 ul li{
+    padding: 0.7vh 0.3vh;
+    background: black;
+    color: white;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.pagination1 ul li a{
+    padding: 13px;
+    font-size: 21px;
+    text-decoration: none;
+    color: snow;
+}
+
+.pagination1 a:hover{
+    color: rgb(249, 200, 237);
+}
+
+.pagination1 li:hover{
+    background: rgb(49, 27, 146);
 }

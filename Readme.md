@@ -1,6 +1,6 @@
 # Vendor application using MongoDB, Express, React and Node (MERN)
 
-This MERN App allows you to create, read, update, and delete vendor list items. It displays 5 records at a time. You can toggle pages to see previous and next records using Back and Next button. 
+This MERN App allows you to create, read, update, and delete vendor list items. It displays 5 records at a time. You can toggle pages to see previous and next records using Back and Next button. You can also paginate to different pages using page number buttons.
 
 ## Live Demo
 [Click here to see live demo hosted online](https://vendorlistapp.netlify.app/)
@@ -46,11 +46,15 @@ You need to run both client and server to use this project. Also you need to giv
 
 Below are some screenshots of this application.
 
-![image](https://github.com/ankpan18/vendorapp/assets/79756942/dee59876-5d26-42fb-91de-190df73e0384)
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/3d0d96b6-ae41-49bf-b7ff-171d61d614b9)
 
 ![image](https://github.com/ankpan18/vendorapp/assets/79756942/2a03167b-fcf8-44af-b5ce-2cbc9cfd542e)
 
 ![image](https://github.com/ankpan18/vendorapp/assets/79756942/b861e681-51e4-4e79-b6d9-e029071d6aa1)
 
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/7f6bcde4-c527-45e4-a49f-56b987338909)
+
 ![image](https://github.com/ankpan18/vendorapp/assets/79756942/2eeedcab-02f4-4e6f-8a27-0d1a9cb3d531)
+
+![image](https://github.com/ankpan18/vendorapp/assets/79756942/a8cb8214-5236-47bb-9fe9-efc1a266ec8e)
 
