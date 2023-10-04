@@ -26,6 +26,10 @@
     margin-inline: auto;
 }
 
+.pagination1 ul{
+    flex-wrap:wrap;
+}
+
 .pagination1 ul li{
     background: #000;
     border-radius: 25px;
